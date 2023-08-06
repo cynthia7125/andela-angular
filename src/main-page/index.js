@@ -2,6 +2,7 @@ import "./main-page.css";
 import Header from "./header";
 import { useEffect, useMemo, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import FeaturedHouse from "./featured-house";
 
 function App() {
   const [allHouses, setAllHouses] = useState([]);
@@ -28,7 +29,7 @@ function App() {
 
         <Switch>
           <Route path="/">
-
+            <FeaturedHouse house={featuredHouse}></FeaturedHouse>
           </Route>
         </Switch>
       </div>
