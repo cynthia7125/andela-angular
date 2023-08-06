@@ -3,6 +3,7 @@ import Header from "./header";
 import { useEffect, useMemo, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import FeaturedHouse from "./featured-house";
+import SearchResults from "../search-results";
 
 function App() {
   const [allHouses, setAllHouses] = useState([]);
@@ -28,6 +29,9 @@ function App() {
         <Header subtitle="Providing houses all over the world" />
 
         <Switch>
+          <Route path="/searchresults/:country">
+              <SearchResults allHouses={allHouses} />
+          </Route>
           <Route path="/">
             <FeaturedHouse house={featuredHouse}></FeaturedHouse>
           </Route>
